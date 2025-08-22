@@ -47,7 +47,7 @@ export const MoodTags = ({ selectedMoods, onMoodsChange }: MoodTagsProps) => {
               onClick={() => handleMoodToggle(mood.id)}
               className={`mood-tag ${mood.className} ${
                 isSelected 
-                  ? 'bg-primary text-primary-foreground border-primary shadow-md' 
+                  ? 'text-primary-foreground border-primary shadow-md' 
                   : ''
               }`}
             >

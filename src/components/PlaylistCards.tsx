@@ -1,12 +1,12 @@
 import { Play, Music, Users } from "lucide-react";
 
 interface Playlist {
-  id: number;
+  id: string;
   name: string;
   description: string;
-  image: string;
-  tracks: number;
-  externalUrl: string;
+  image: string | null;
+  tracks: number | null;
+  externalUrl: string | null;
 }
 
 interface PlaylistCardsProps {
