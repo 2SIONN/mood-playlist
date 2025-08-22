@@ -6,6 +6,7 @@ interface Playlist {
   description: string;
   image: string;
   tracks: number;
+  externalUrl: string;
 }
 
 interface PlaylistCardsProps {
@@ -26,7 +27,7 @@ export const PlaylistCards = ({ playlists }: PlaylistCardsProps) => {
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {playlists.map((playlist) => (
-          <div key={playlist.id} className="playlist-card group cursor-pointer">
+          <a href={playlist.externalUrl} key={playlist.id} className="playlist-card group cursor-pointer" target="_blank">
             <div className="relative mb-4 overflow-hidden rounded-xl">
               <img 
                 src={playlist.image} 
@@ -59,7 +60,7 @@ export const PlaylistCards = ({ playlists }: PlaylistCardsProps) => {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

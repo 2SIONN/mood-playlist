@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Hero } from "@/components/Hero";
 import { MBTISelector } from "@/components/MBTISelector";
 import { MoodTags } from "@/components/MoodTags";
@@ -21,6 +21,8 @@ const Index = () => {
         (selectedMBTI ? selectedMBTI + " " : "") +
         (selectedMoods.length > 0 ? selectedMoods.join(" ") : "");
       const result = await searchPlaylistsByMood(query.trim() || "기분");
+
+      console.log("result", result)
       // Spotify API 결과를 setPlaylists에 저장
       setPlaylists(
         result.map((item: any) => ({
@@ -32,12 +34,17 @@ const Index = () => {
           externalUrl: item.external_urls?.spotify,
         }))
       );
+
     } catch (e) {
       alert("플레이리스트를 불러오는 중 오류가 발생했습니다.");
       setPlaylists([]);
     }
     setIsLoading(false);
   };
+
+  useEffect(()=>{
+    console.log('playlists', playlists)
+  }, [playlists])
 
   return (
     <div className="min-h-screen bg-gradient-hero">
