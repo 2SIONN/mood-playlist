@@ -6,9 +6,9 @@ export const Hero = () => {
       <div className="container mx-auto px-6 py-20">
         <div className="text-center max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <Music className="w-8 h-8 text-primary animate-pulse-glow" />
-            <Heart className="w-6 h-6 text-secondary" />
-            <Sparkles className="w-7 h-7 text-creative" />
+            <Music className="size-8 text-primary" />
+            <Heart className="size-8 text-secondary" />
+            <Sparkles className="size-8 text-creative" />
           </div>
           
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-creative bg-clip-text text-transparent leading-tight">
